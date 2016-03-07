@@ -27,6 +27,8 @@ class FlyersController extends Controller
     */
     public function create()
     {
+        // flash()->overlay('Welcome Aboard', 'Thank you for signing up.');
+        // flash()->success('Test Title', 'Test Message');
     	return view('flyers.create');
     }
 
@@ -39,6 +41,8 @@ class FlyersController extends Controller
     public function store(FlyerRequest $request)
     {
         Flyer::create($request->all());
+
+        flash()->success('Success!', 'Your flyer has been created.');
 
         return redirect()->back();
     }
