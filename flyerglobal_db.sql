@@ -1,5 +1,5 @@
 /*
-SQLyog Ultimate v12.18 (64 bit)
+SQLyog Ultimate v12.2.1 (64 bit)
 MySQL - 5.5.47-0ubuntu0.14.04.1 : Database - flyerglobal
 *********************************************************************
 */
@@ -29,9 +29,15 @@ CREATE TABLE `flyer_photos` (
   PRIMARY KEY (`id`),
   KEY `flyer_photos_flyer_id_foreign` (`flyer_id`),
   CONSTRAINT `flyer_photos_flyer_id_foreign` FOREIGN KEY (`flyer_id`) REFERENCES `flyers` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Data for the table `flyer_photos` */
+
+insert  into `flyer_photos`(`id`,`flyer_id`,`path`,`created_at`,`updated_at`) values 
+(1,2,'flyers/photos/1457422917house-01.jpg','2016-03-07 23:41:57','2016-03-07 23:41:57'),
+(2,2,'flyers/photos/1457422917house-02.jpg','2016-03-07 23:41:57','2016-03-07 23:41:57'),
+(3,2,'flyers/photos/1457422917house-03.jpg','2016-03-07 23:41:57','2016-03-07 23:41:57'),
+(4,2,'flyers/photos/1457422917house-04.jpg','2016-03-07 23:41:57','2016-03-07 23:41:57');
 
 /*Table structure for table `flyers` */
 
