@@ -3,6 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <title>Flyer Global</title>
+	    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+	    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="/css/app.css" />
         <link rel="stylesheet" type="text/css" href="/css/libs.css" />
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.css" />
@@ -18,13 +20,14 @@
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
 	          </button>
-	          <a class="navbar-brand" href="#">Flyer Global</a>
+	          <a class="navbar-brand" href="/">Flyer Global</a>
 	        </div>
 	        <div id="navbar" class="collapse navbar-collapse">
 	          <ul class="nav navbar-nav">
-	            <li class="active"><a href="#">Home</a></li>
+	            <li class="active"><a href="/">Home</a></li>
 	            <li><a href="#about">About</a></li>
 	            <li><a href="#contact">Contact</a></li>
+	            <li><a href="/logout">Logout</a></li>
 	          </ul>
 	        </div><!--/.nav-collapse -->
 	      </div>

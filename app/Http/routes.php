@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('pages.home');
 });
 
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -26,8 +27,12 @@ Route::get('/', function () {
 |
 */
 
+
 Route::group(['middleware' => ['web']], function () {
 	Route::resource('flyers', 'FlyersController');
 	Route::get('{zip}/{street}', 'FlyersController@show');
 	Route::post('{zip}/{street}/photos', ['as' => 'store_photo_path', 'uses' => 'FlyersController@addPhoto']);
+
+	// Authentication & Registration routes...
+    Route::auth();
 });
