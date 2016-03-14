@@ -23,21 +23,35 @@ DROP TABLE IF EXISTS `flyer_photos`;
 CREATE TABLE `flyer_photos` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `flyer_id` int(10) unsigned NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `path` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `thumbnail_path` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `flyer_photos_flyer_id_foreign` (`flyer_id`),
   CONSTRAINT `flyer_photos_flyer_id_foreign` FOREIGN KEY (`flyer_id`) REFERENCES `flyers` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Data for the table `flyer_photos` */
 
-insert  into `flyer_photos`(`id`,`flyer_id`,`path`,`created_at`,`updated_at`) values 
-(1,2,'flyers/photos/1457422917house-01.jpg','2016-03-07 23:41:57','2016-03-07 23:41:57'),
-(2,2,'flyers/photos/1457422917house-02.jpg','2016-03-07 23:41:57','2016-03-07 23:41:57'),
-(3,2,'flyers/photos/1457422917house-03.jpg','2016-03-07 23:41:57','2016-03-07 23:41:57'),
-(4,2,'flyers/photos/1457422917house-04.jpg','2016-03-07 23:41:57','2016-03-07 23:41:57');
+insert  into `flyer_photos`(`id`,`flyer_id`,`name`,`path`,`thumbnail_path`,`created_at`,`updated_at`) values 
+(1,2,'1457853582-house-01.jpg','flyerdata/photos/1457853582-house-01.jpg','flyerdata/photos/tn-1457853582-house-01.jpg','2016-03-12 23:19:42','2016-03-12 23:19:42'),
+(2,2,'1457853681-house-02.jpg','flyerdata/photos/1457853681-house-02.jpg','flyerdata/photos/tn-1457853681-house-02.jpg','2016-03-12 23:21:21','2016-03-12 23:21:21'),
+(3,2,'1457853681-house-03.jpg','flyerdata/photos/1457853681-house-03.jpg','flyerdata/photos/tn-1457853681-house-03.jpg','2016-03-12 23:21:21','2016-03-12 23:21:21'),
+(4,2,'1457853681-house-04.jpg','flyerdata/photos/1457853681-house-04.jpg','flyerdata/photos/tn-1457853681-house-04.jpg','2016-03-12 23:21:21','2016-03-12 23:21:21'),
+(5,2,'1457854245-house-02.jpg','flyerdata/photos/1457854245-house-02.jpg','flyerdata/photos/tn-1457854245-house-02.jpg','2016-03-12 23:30:45','2016-03-12 23:30:45'),
+(6,2,'1457854245-house-01.jpg','flyerdata/photos/1457854245-house-01.jpg','flyerdata/photos/tn-1457854245-house-01.jpg','2016-03-12 23:30:45','2016-03-12 23:30:45'),
+(7,2,'1457854245-house-03.jpg','flyerdata/photos/1457854245-house-03.jpg','flyerdata/photos/tn-1457854245-house-03.jpg','2016-03-12 23:30:45','2016-03-12 23:30:45'),
+(8,2,'1457854245-house-04.jpg','flyerdata/photos/1457854245-house-04.jpg','flyerdata/photos/tn-1457854245-house-04.jpg','2016-03-12 23:30:45','2016-03-12 23:30:45'),
+(9,2,'1457854251-house-02.jpg','flyerdata/photos/1457854251-house-02.jpg','flyerdata/photos/tn-1457854251-house-02.jpg','2016-03-12 23:30:51','2016-03-12 23:30:51'),
+(10,2,'1457854251-house-01.jpg','flyerdata/photos/1457854251-house-01.jpg','flyerdata/photos/tn-1457854251-house-01.jpg','2016-03-12 23:30:51','2016-03-12 23:30:51'),
+(11,2,'1457854251-house-03.jpg','flyerdata/photos/1457854251-house-03.jpg','flyerdata/photos/tn-1457854251-house-03.jpg','2016-03-12 23:30:51','2016-03-12 23:30:51'),
+(12,2,'1457854251-house-04.jpg','flyerdata/photos/1457854251-house-04.jpg','flyerdata/photos/tn-1457854251-house-04.jpg','2016-03-12 23:30:51','2016-03-12 23:30:51'),
+(13,3,'1457903388-house-02.jpg','flyerdata/photos/1457903388-house-02.jpg','flyerdata/photos/tn-1457903388-house-02.jpg','2016-03-13 14:09:48','2016-03-13 14:09:48'),
+(14,3,'1457903388-house-01.jpg','flyerdata/photos/1457903388-house-01.jpg','flyerdata/photos/tn-1457903388-house-01.jpg','2016-03-13 14:09:48','2016-03-13 14:09:48'),
+(15,3,'1457903388-house-03.jpg','flyerdata/photos/1457903388-house-03.jpg','flyerdata/photos/tn-1457903388-house-03.jpg','2016-03-13 14:09:48','2016-03-13 14:09:48'),
+(16,3,'1457903388-house-04.jpg','flyerdata/photos/1457903388-house-04.jpg','flyerdata/photos/tn-1457903388-house-04.jpg','2016-03-13 14:09:48','2016-03-13 14:09:48');
 
 /*Table structure for table `flyers` */
 
@@ -45,6 +59,7 @@ DROP TABLE IF EXISTS `flyers`;
 
 CREATE TABLE `flyers` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned NOT NULL,
   `street` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `city` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
   `zip` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
@@ -55,13 +70,13 @@ CREATE TABLE `flyers` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Data for the table `flyers` */
 
-insert  into `flyers`(`id`,`street`,`city`,`zip`,`state`,`country`,`price`,`description`,`created_at`,`updated_at`) values 
-(1,'1323 S. Carmelina Ave.','Los Angeles','90025','CA','us',500000,'Nice apartment for sale in West Los Angeles.','2016-03-06 00:00:47','2016-03-06 00:00:47'),
-(2,'500 Landfair Ave.','Los Angeles','90024','CA','us',2500000,'Multi-story building in Westwood, Los Angeles is for sale. Walking distance from UCLA campus. \r\nAlso, very close to theaters, restaurants, and bars in Westwood.\r\n','2016-03-06 16:06:52','2016-03-06 16:06:52');
+insert  into `flyers`(`id`,`user_id`,`street`,`city`,`zip`,`state`,`country`,`price`,`description`,`created_at`,`updated_at`) values 
+(2,1,'500 Landfair Ave.','Los Angeles','90024','CA','us',2500000,'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. \r\n\r\nSed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. \r\n\r\nClass aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. \r\n','2016-03-12 23:12:20','2016-03-12 23:12:20'),
+(3,2,'1323 S. Carmelina Ave.','Los Angeles','90025','CA','us',450000,'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. \r\n\r\nSed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. \r\n\r\nClass aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. \r\n','2016-03-13 14:08:34','2016-03-13 14:08:34');
 
 /*Table structure for table `migrations` */
 
@@ -108,9 +123,13 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Data for the table `users` */
+
+insert  into `users`(`id`,`name`,`email`,`password`,`remember_token`,`created_at`,`updated_at`) values 
+(1,'John Doe','john@gmail.com','$2y$10$FtU9DELQq2dOY9oaNLGHA.EDUSTaO7cfrlDx0D8apZ7avaAI2x00e','m7FEdOmVhj96o5AjOOOmqK0pgIg4FlQoehhICw1Dm5fITLcRmC3Ktkm2upLj','2016-03-12 22:44:06','2016-03-13 14:11:47'),
+(2,'Jane Doe','jane@gmail.com','$2y$10$bWHRgK4HqK4WWoyszMFXFeM3MkRezd1UNoaAx7VFBj2kO6yKN9lii',NULL,'2016-03-13 14:28:45','2016-03-13 14:28:45');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
