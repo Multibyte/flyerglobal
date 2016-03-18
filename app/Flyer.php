@@ -32,7 +32,7 @@ class Flyer extends Model
 	{
         $street = str_replace('-', ' ', $street);
 
-        return static::where(compact('zip', $street))->firstOrFail();
+        return static::where(compact('zip', 'street'))->firstOrFail();
 	}
 
 	public function getPriceAttribute($price)
@@ -80,4 +80,5 @@ class Flyer extends Model
     {
     	return $this->user_id == $user->id;
     }
+
 }

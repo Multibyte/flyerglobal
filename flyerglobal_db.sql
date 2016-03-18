@@ -31,27 +31,15 @@ CREATE TABLE `flyer_photos` (
   PRIMARY KEY (`id`),
   KEY `flyer_photos_flyer_id_foreign` (`flyer_id`),
   CONSTRAINT `flyer_photos_flyer_id_foreign` FOREIGN KEY (`flyer_id`) REFERENCES `flyers` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Data for the table `flyer_photos` */
 
 insert  into `flyer_photos`(`id`,`flyer_id`,`name`,`path`,`thumbnail_path`,`created_at`,`updated_at`) values 
-(1,2,'1457853582-house-01.jpg','flyerdata/photos/1457853582-house-01.jpg','flyerdata/photos/tn-1457853582-house-01.jpg','2016-03-12 23:19:42','2016-03-12 23:19:42'),
-(2,2,'1457853681-house-02.jpg','flyerdata/photos/1457853681-house-02.jpg','flyerdata/photos/tn-1457853681-house-02.jpg','2016-03-12 23:21:21','2016-03-12 23:21:21'),
-(3,2,'1457853681-house-03.jpg','flyerdata/photos/1457853681-house-03.jpg','flyerdata/photos/tn-1457853681-house-03.jpg','2016-03-12 23:21:21','2016-03-12 23:21:21'),
-(4,2,'1457853681-house-04.jpg','flyerdata/photos/1457853681-house-04.jpg','flyerdata/photos/tn-1457853681-house-04.jpg','2016-03-12 23:21:21','2016-03-12 23:21:21'),
-(5,2,'1457854245-house-02.jpg','flyerdata/photos/1457854245-house-02.jpg','flyerdata/photos/tn-1457854245-house-02.jpg','2016-03-12 23:30:45','2016-03-12 23:30:45'),
-(6,2,'1457854245-house-01.jpg','flyerdata/photos/1457854245-house-01.jpg','flyerdata/photos/tn-1457854245-house-01.jpg','2016-03-12 23:30:45','2016-03-12 23:30:45'),
-(7,2,'1457854245-house-03.jpg','flyerdata/photos/1457854245-house-03.jpg','flyerdata/photos/tn-1457854245-house-03.jpg','2016-03-12 23:30:45','2016-03-12 23:30:45'),
-(8,2,'1457854245-house-04.jpg','flyerdata/photos/1457854245-house-04.jpg','flyerdata/photos/tn-1457854245-house-04.jpg','2016-03-12 23:30:45','2016-03-12 23:30:45'),
-(9,2,'1457854251-house-02.jpg','flyerdata/photos/1457854251-house-02.jpg','flyerdata/photos/tn-1457854251-house-02.jpg','2016-03-12 23:30:51','2016-03-12 23:30:51'),
-(10,2,'1457854251-house-01.jpg','flyerdata/photos/1457854251-house-01.jpg','flyerdata/photos/tn-1457854251-house-01.jpg','2016-03-12 23:30:51','2016-03-12 23:30:51'),
-(11,2,'1457854251-house-03.jpg','flyerdata/photos/1457854251-house-03.jpg','flyerdata/photos/tn-1457854251-house-03.jpg','2016-03-12 23:30:51','2016-03-12 23:30:51'),
-(12,2,'1457854251-house-04.jpg','flyerdata/photos/1457854251-house-04.jpg','flyerdata/photos/tn-1457854251-house-04.jpg','2016-03-12 23:30:51','2016-03-12 23:30:51'),
-(13,3,'1457903388-house-02.jpg','flyerdata/photos/1457903388-house-02.jpg','flyerdata/photos/tn-1457903388-house-02.jpg','2016-03-13 14:09:48','2016-03-13 14:09:48'),
-(14,3,'1457903388-house-01.jpg','flyerdata/photos/1457903388-house-01.jpg','flyerdata/photos/tn-1457903388-house-01.jpg','2016-03-13 14:09:48','2016-03-13 14:09:48'),
-(15,3,'1457903388-house-03.jpg','flyerdata/photos/1457903388-house-03.jpg','flyerdata/photos/tn-1457903388-house-03.jpg','2016-03-13 14:09:48','2016-03-13 14:09:48'),
-(16,3,'1457903388-house-04.jpg','flyerdata/photos/1457903388-house-04.jpg','flyerdata/photos/tn-1457903388-house-04.jpg','2016-03-13 14:09:48','2016-03-13 14:09:48');
+(1,2,'8052878257aefcda57e48bc5119665fa37973c35.jpg','images/photos/8052878257aefcda57e48bc5119665fa37973c35.jpg','images/photos/tn-8052878257aefcda57e48bc5119665fa37973c35.jpg','2016-03-13 22:59:29','2016-03-13 22:59:29'),
+(2,2,'09449ae235371f6dc1b0023d67333952dcde54bd.jpg','images/photos/09449ae235371f6dc1b0023d67333952dcde54bd.jpg','images/photos/tn-09449ae235371f6dc1b0023d67333952dcde54bd.jpg','2016-03-13 23:00:01','2016-03-13 23:00:01'),
+(3,2,'762caebb716367a88daabaacc5e39e73a81bf2d1.jpg','images/photos/762caebb716367a88daabaacc5e39e73a81bf2d1.jpg','images/photos/tn-762caebb716367a88daabaacc5e39e73a81bf2d1.jpg','2016-03-13 23:00:01','2016-03-13 23:00:01'),
+(4,2,'e2809e3738a245dd06487771325b70118a163a18.jpg','images/photos/e2809e3738a245dd06487771325b70118a163a18.jpg','images/photos/tn-e2809e3738a245dd06487771325b70118a163a18.jpg','2016-03-13 23:00:01','2016-03-13 23:00:01');
 
 /*Table structure for table `flyers` */
 
@@ -129,7 +117,7 @@ CREATE TABLE `users` (
 
 insert  into `users`(`id`,`name`,`email`,`password`,`remember_token`,`created_at`,`updated_at`) values 
 (1,'John Doe','john@gmail.com','$2y$10$FtU9DELQq2dOY9oaNLGHA.EDUSTaO7cfrlDx0D8apZ7avaAI2x00e','m7FEdOmVhj96o5AjOOOmqK0pgIg4FlQoehhICw1Dm5fITLcRmC3Ktkm2upLj','2016-03-12 22:44:06','2016-03-13 14:11:47'),
-(2,'Jane Doe','jane@gmail.com','$2y$10$bWHRgK4HqK4WWoyszMFXFeM3MkRezd1UNoaAx7VFBj2kO6yKN9lii',NULL,'2016-03-13 14:28:45','2016-03-13 14:28:45');
+(2,'Jane Doe','jane@gmail.com','$2y$10$bWHRgK4HqK4WWoyszMFXFeM3MkRezd1UNoaAx7VFBj2kO6yKN9lii','Aw6hmNPuVo18TUsrdaYiChcDsOboeM5SvP4cUzwcdepBZGPiazwABuYGHjYb','2016-03-13 14:28:45','2016-03-13 18:04:07');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

@@ -42,6 +42,7 @@
 			@yield('content')
 		</div>
 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.js"></script>
 		<script src="/js/libs.js"></script>
 		@yield('scripts.footer')
 
